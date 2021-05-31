@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ExampleScroll</string>
+    <string name="head">Android</string>
+    <string name="shead">Introduction to Android</string>
+</resources>
