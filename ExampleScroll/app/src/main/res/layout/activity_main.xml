@@ -5,17 +5,59 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="12dp"
+    android:background="#E1C0C0"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/heading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/heading"
+        android:fontFamily="@font/allan_bold"
         android:gravity="center"
-        android:textColor="#0B9FE3"
         android:text="@string/head"
-        android:textStyle="bold"
+        android:textColor="#0B9FE3"
         android:textSize="36sp"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/subhead"
+        android:text="@string/shead"
+        android:layout_below="@+id/heading"
+        android:textStyle="italic"
+        android:textColor="#3F51B5"
+        android:textSize="27sp"
+        android:layout_marginTop="10dp"
         />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/subhead"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/titlehead"
+            android:textStyle="bold|italic"
+            android:textColor="#61A7DF"
+            android:text="@string/thead"
+            android:textSize="27sp"/>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#E1E6AA">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text"
+                android:id="@+id/tv"
+                android:textSize="24sp"
+                android:autoLink="all"
+            />
+        </ScrollView>
+    </LinearLayout>
 
 </RelativeLayout>
