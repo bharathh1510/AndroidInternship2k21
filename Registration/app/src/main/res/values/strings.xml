@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Registration</string>
+    <string-array name="branch">
+        <item>Select branch</item>
+        <item>CSE</item>
+        <item>ECE</item>
+        <item>EEE</item>
+        <item>mech</item>
+    </string-array>
+</resources>
