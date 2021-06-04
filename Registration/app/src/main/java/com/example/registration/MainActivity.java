@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
     if (eng.isChecked()){
         sb.append(tel+"\n");
     }
-        Log.i("INFO",n+"\n"+m+"\n"+num+"\n"+b+"\n"+rb.getText()+"\n"+sb.toString()+"\n"+dob.getText().toString());
+        Log.i("APSSDC",n+"\n"+m+"\n"+num+"\n"+b+"\n"+rb.getText()+"\n"+sb.toString()+"\n"+dob.getText().toString());
     }
 
     public void dob(View view) {
@@ -76,5 +76,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 },year,month,day);
         dpd.show();
+
     }
 }
