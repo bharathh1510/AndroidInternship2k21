@@ -8,6 +8,7 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#B3CACD"
     android:gravity="center"
     android:orientation="vertical">
 
@@ -15,7 +16,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Shared Preferences Demo!"
-        android:textColor="#000"
+        android:textStyle="bold|italic"
+        android:textColor="#125C15"
         android:textSize="25dp"
         android:layout_gravity="center"/>
     <EditText
@@ -23,11 +25,13 @@
         android:layout_height="wrap_content"
         android:id="@+id/username"
         android:layout_margin="10dp"
+        android:textColorHint="#000"
         android:hint="Enter username"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/password"
+        android:textColorHint="#000"
         android:layout_margin="10dp"
         android:hint="Enter password"
         android:inputType="textPassword"/>
