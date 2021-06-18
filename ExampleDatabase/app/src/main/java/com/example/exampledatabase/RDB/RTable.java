@@ -9,15 +9,7 @@ public class RTable {
     @NonNull
     @PrimaryKey
     String sroll;
-
     String sname,snumber;
-
-    public RTable(@NonNull String sroll, String sname, String snumber) {
-        this.sroll = sroll;
-        this.sname = sname;
-        this.snumber = snumber;
-    }
-
 
     @NonNull
     public String getSroll() {
