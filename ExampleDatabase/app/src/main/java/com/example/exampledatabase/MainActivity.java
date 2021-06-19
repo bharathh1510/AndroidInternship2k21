@@ -1,7 +1,9 @@
 package com.example.exampledatabase;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -11,6 +13,8 @@ import android.widget.Toast;
 
 import com.example.exampledatabase.RDB.RTable;
 import com.example.exampledatabase.RDB.RViewModel;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     EditText roll,name, phone;
@@ -25,14 +29,22 @@ public class MainActivity extends AppCompatActivity {
         phone=findViewById(R.id.phone);
         rv=findViewById(R.id.rv);
         rViewModel= new ViewModelProvider(this).get(RViewModel.class);
+        rViewModel.readData().observe(this, new Observer<List<RTable>>() {
+            @Override
+            public void onChanged(List<RTable> rTables) {
+                MyAdapter adapter=new MyAdapter(MainActivity.this,rTables);
+                rv.setAdapter(adapter);
+                rv.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+            }
+        });
 
     }
 
     public void save(View view) {
         RTable rTable=new RTable();
         rTable.setSroll(roll.getText().toString());
-        rTable.setSname(roll.getText().toString());
-        rTable.setSnumber(roll.getText().toString());
+        rTable.setSname(name.getText().toString());
+        rTable.setSnumber(phone.getText().toString());
         rViewModel.insert(rTable);
         Toast.makeText(this, "Data Inserted", Toast.LENGTH_SHORT).show();
     }
