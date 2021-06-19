@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     EditText roll,name, phone;
     RecyclerView rv;
     public static RViewModel rViewModel;
+    List<RTable> list;
+    String l="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,11 +43,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void save(View view) {
+        for (int i =0;i<list.size();i++){
+            l = list.get(i).getSroll();
+        }
         RTable rTable=new RTable();
-        rTable.setSroll(roll.getText().toString());
-        rTable.setSname(name.getText().toString());
-        rTable.setSnumber(phone.getText().toString());
-        rViewModel.insert(rTable);
-        Toast.makeText(this, "Data Inserted", Toast.LENGTH_SHORT).show();
+        String r =roll.getText().toString();
+        String n =name.getText().toString();
+        String num =phone.getText().toString();
+        if (r.isEmpty() | n.isEmpty() | num.isEmpty()) {
+            Toast.makeText(this, "Please fill all the details",
+                    Toast.LENGTH_SHORT).show();
+        } else if(l.equals(r)) {
+            Toast.makeText(this, "Duplicate Data", Toast.LENGTH_SHORT).show();
+        }else{
+            rTable.setSroll(r);
+            rTable.setSname(n);
+            rTable.setSnumber(num);
+            rViewModel.insert(rTable);
+            Toast.makeText(this, "Data Inserted", Toast.LENGTH_SHORT).show();
+        }
     }
 }
